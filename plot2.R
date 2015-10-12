@@ -7,6 +7,7 @@ d<-d[,-2]
 d<-d[as.Date(d$Date) %in% c(as.Date("2007-02-01"),as.Date("2007-02-02")),]
 
 Sys.setlocale("LC_ALL","English")
-
+png("plot2.png", height = 480, width = 480)
 plot(d$Date,d$Global_active_power,pch="",ylab="Global Active Power (kilowatts)",xlab="", type = "l")
 
+dev.off()
