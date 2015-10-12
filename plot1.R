@@ -5,5 +5,6 @@ d$Date<-strptime(paste(d$Date,d$Time,sep=" "),format = "%d/%m/%Y %H:%M:%S")
 d<-d[,-2]
 
 d<-d[as.Date(d$Date) %in% c(as.Date("2007-02-01"),as.Date("2007-02-02")),]
-
+png("plot1.png", height = 480, width = 480)
 hist(d$Global_active_power,main = "Global Active Power",xlab = "Global Active Power (kilowatts)",col = "red3")
+dev.off()
